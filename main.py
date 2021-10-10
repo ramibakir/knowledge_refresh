@@ -27,11 +27,18 @@ def guard_two():
 
 
 def guard_three():
+    # Vakt 3
     word = input("Gi meg hvilket som helst ord og så skal jeg si det baklengs!").lower()
     backwards = word[len(word)::-1]
     print(backwards)
-    over = True
     return True
+
+
+def oppryddiaro():
+    user_operator = input("Oppgi operatoren du vil bruke: ")
+    start_num = int(input("Oppgi starttallet: "))
+    end_num = int(input("Oppgi sluttallet: "))
+    # if user_operator == operator:
 
 
 print("Prinsen er kidnappet av sjømonsteret Dagon!\n"
@@ -42,22 +49,34 @@ print("Men for at vi skal vite at dere er sterke nok til å redde prinsen, vil v
       "lederen av eventyrerne tester som må bestås før dere kan dra ut. En feil og dere vil bli kastet ut.")
 
 operators = {
-    "+": o.add,
-    "-": o.sub,
-    "/": o.truediv,
-    "*": o.mul
+    "addisjon": {
+        "+": o.add
+    },
+    "subtraksjon": {
+
+        "-": o.sub
+    },
+    "divisjon": {
+
+        "/": o.truediv
+    },
+    "multiplikasjon": {
+
+        "*": o.mul
+    }
 }
 
-keys = list(operators)
+operator = None
 
-operator = r.choice(keys)
+for op in operators:
+    if operator is None:
+        operator = r.choice(list(operators[op]))
+
 num1 = r.randint(1, 20)
 num2 = r.randint(1, 20)
 num3 = r.randint(1, 20)
 
-over = False
-
-while not over:
+while True:
     guard_one()
     if guard_three():
         print("Du kan nå dra videre til trollmannen!")
