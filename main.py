@@ -38,7 +38,11 @@ def oppryddiaro():
     user_operator = input("Oppgi operatoren du vil bruke: ")
     start_num = int(input("Oppgi starttallet: "))
     end_num = int(input("Oppgi sluttallet: "))
-    # if user_operator == operator:
+
+    for op_id, op_info in operators.items():
+        for key in op_info:
+            if user_operator == op_id:
+                print(eval(f"{start_num} {key} {end_num}"))
 
 
 print("Prinsen er kidnappet av sjømonsteret Dagon!\n"
@@ -80,4 +84,7 @@ while True:
     guard_one()
     if guard_three():
         print("Du kan nå dra videre til trollmannen!")
-        exit()
+
+    print(f"Velkommen til trollmannen, her skal du lære noen trylleformler, og vi starter med {oppryddiaro.__name__}")
+    oppryddiaro()
+    exit()
