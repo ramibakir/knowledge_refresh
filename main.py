@@ -19,7 +19,7 @@ def guard_two():
     test2 = num1 <= num3
     print("Du skal nå bli testet i logiske uttrykk!")
     answer_test2 = input(f"Er det sant at {num1} > {num2}")
-    if answer_test2 == "True" or "true":
+    if answer_test2 == "Ja" or "ja":
         print("Du bestod testen og kan gå videre til neste test!")
     else:
         print("Feil svar, hade bra :)")
@@ -34,15 +34,15 @@ def guard_three():
     return True
 
 
-def oppryddiaro():
-    user_operator = input("Oppgi operatoren du vil bruke: ")
-    start_num = int(input("Oppgi starttallet: "))
-    end_num = int(input("Oppgi sluttallet: "))
-
-    for op_id, op_info in operators.items():
-        for key in op_info:
-            if user_operator == op_id:
-                print(eval(f"{start_num} {key} {end_num}"))
+# def oppryddiaro():
+#     user_operator = input("Oppgi operatoren du vil bruke: ")
+#     start_num = int(input("Oppgi starttallet: "))
+#     end_num = int(input("Oppgi sluttallet: "))
+#
+#     for op_id, op_info in operators.items():
+#         for key in op_info:
+#             if user_operator == op_id:
+#                 print(eval(f"{start_num} {key} {end_num}"))
 
 
 print("Prinsen er kidnappet av sjømonsteret Dagon!\n"
@@ -52,29 +52,42 @@ print("Prinsen er kidnappet av sjømonsteret Dagon!\n"
 print("Men for at vi skal vite at dere er sterke nok til å redde prinsen, vil vaktene på slottet gi"
       "lederen av eventyrerne tester som må bestås før dere kan dra ut. En feil og dere vil bli kastet ut.")
 
+# operators = {
+#     "addisjon": {
+#         "+": o.add
+#     },
+#     "subtraksjon": {
+#
+#         "-": o.sub
+#     },
+#     "divisjon": {
+#
+#         "/": o.truediv
+#     },
+#     "multiplikasjon": {
+#
+#         "*": o.mul
+#     }
+# }
+
 operators = {
-    "addisjon": {
-        "+": o.add
-    },
-    "subtraksjon": {
 
-        "-": o.sub
-    },
-    "divisjon": {
+    "+": o.add
+    ,
 
-        "/": o.truediv
-    },
-    "multiplikasjon": {
+    "-": o.sub
+    ,
 
-        "*": o.mul
-    }
+    "/": o.truediv
+    ,
+
+    "*": o.mul
+
 }
 
-operator = None
+keys = list(operators)
 
-for op in operators:
-    if operator is None:
-        operator = r.choice(list(operators[op]))
+operator = r.choice(keys)
 
 num1 = r.randint(1, 20)
 num2 = r.randint(1, 20)
@@ -85,6 +98,6 @@ while True:
     if guard_three():
         print("Du kan nå dra videre til trollmannen!")
 
-    print(f"Velkommen til trollmannen, her skal du lære noen trylleformler, og vi starter med {oppryddiaro.__name__}")
-    oppryddiaro()
+    #print(f"Velkommen til trollmannen, her skal du lære noen trylleformler, og vi starter med {oppryddiaro.__name__}")
+    #oppryddiaro()
     exit()
