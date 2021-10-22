@@ -44,6 +44,15 @@ def guard_three():
 #             if user_operator == op_id:
 #                 print(eval(f"{start_num} {key} {end_num}"))
 
+def delivligo():
+    for x in range(5):
+        print(x)
+    str_comparison = 'for x in range(10)'
+    user_input = input("Oppgi hvordan tallrekken kan replikeres: ")
+
+    #hvis str_comparison is brukeren sin input:
+        #print(det var riktig)
+
 
 print("Prinsen er kidnappet av sjømonsteret Dagon!\n"
       "Dronningen har beordret alle egnede eventyrere til å møte opp på slottet.\n"
@@ -98,6 +107,9 @@ while True:
     if guard_three():
         print("Du kan nå dra videre til trollmannen!")
 
-    #print(f"Velkommen til trollmannen, her skal du lære noen trylleformler, og vi starter med {oppryddiaro.__name__}")
-    #oppryddiaro()
+        for x in range(10):
+            print(x)
+
+    print(f"Velkommen til trollmannen, her skal du lære noen trylleformler, og vi starter med {oppryddiaro.__name__}")
+    oppryddiaro()
     exit()
